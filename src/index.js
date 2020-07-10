@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {Switch, Route, BrowserRouter} from 'react-router-dom'
+import {Provider} from 'react-redux'
+
+import Login from './containers/login/login'
+import Register from './containers/register/register'
+import Main from './containers/main/main'
+import store from './redux/store'
+
+import './assets/css/index.css'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+      <BrowserRouter>
+          <Switch>
+              <Route path='/login' component={Login}/>
+              <Route path='/register' component={Register}/>
+              <Route component={Main}/>
+          </Switch>
+      </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 
