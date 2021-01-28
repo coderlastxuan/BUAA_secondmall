@@ -107,5 +107,5 @@ class Main extends Component {
 
 export default connect(
     state => ({user: state.user, unreadCount: state.chat.unreadCount}),   //mapStateToProps: func
-    {get_user}     //mapDispatchToProps: func or obj
+    {get_user}     //mapDispatchToProps: fun or obj
 )(Main)
